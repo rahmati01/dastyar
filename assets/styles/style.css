@@ -1,0 +1,152 @@
+body {
+  font-family: vazirmatn;
+  direction: rtl;
+  background-color: #c4def7;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+container {
+  width: 100%;
+  height: 100vh;
+  max-width: 1124px !important;
+  padding: 16px;
+}
+
+icon-wrapper {
+  width: 90%;
+  justify-content: end;
+  margin: 16px auto;
+}
+
+.setting-icon,
+.user-icon {
+  width: 25px;
+  height: 25px;
+  color: #feffff;
+  margin: 0 10px;
+}
+
+.setting-icon:hover,
+.user-icon:hover {
+  cursor: pointer;
+}
+
+wrapper {
+  width: 90%;
+  height: 80vh;
+  margin: auto;
+  justify-content: space-between;
+}
+
+right-side,
+main,
+left-side {
+  width: 24%;
+  height: 100%;
+  background-color: #fff;
+  border: none;
+  border-radius: 24px;
+}
+
+main {
+  width: 50%;
+}
+
+right-side {
+  position: relative;
+}
+
+right-side > h2 {
+  padding: 16px;
+  font-size: 1.5rem;
+  font-weight: 950;
+}
+
+todo-list {
+  height: 80%;
+}
+right-side > hr {
+  color: #eeeef03e;
+}
+
+todo-list > ul {
+  margin: 16px auto;
+  width: 90%;
+}
+todo-list li {
+  border: 2px solid rgba(85, 83, 83, 0.281);
+  margin: auto;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+todo-list li > div {
+  padding: 15px 0;
+}
+
+.green-icon {
+  width: 10px;
+  height: 10px;
+  border-color: greenyellow;
+  padding-right: 4px;
+}
+todo-list li > p {
+  font-size: 1rem;
+  padding: 4px;
+}
+
+.delete-icon {
+  margin: auto 4px;
+  display: none;
+}
+
+insert-todo-box {
+  justify-content: space-between;
+  padding: 10px;
+  border: 2px solid rgba(85, 83, 83, 0.281);
+  border-radius: 8px;
+  margin: 16px;
+  height: 6vh;
+  position: absolute;
+  bottom: 0;
+}
+
+insert-todo-box > input {
+  width: 80%;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  font-family: vazirmatn;
+  padding: 4px;
+}
+.plus-icon {
+  margin: auto;
+}
+.plus-icon:hover {
+  cursor: pointer;
+}
