@@ -34,17 +34,91 @@
                     </ul>
                 </todo-list>
                 <hr>
-                <insert-todo-box class="flex">
-                    <input class="todo-input-box" type="text" placeholder="نوشتن تسک جدید">
-                    <button class="plus-button"><i class='bx bx-plus-medical'
-                            style='color:rgba(0,0,0,0.29)'></i></button>
-                </insert-todo-box>
+                <insert-todo-box-wrapper class="flex">
+                    <insert-todo-box class="flex">
+                        <input class="todo-input-box" type="text" placeholder="نوشتن تسک جدید">
+                        <button class="plus-button"><i class='bx bx-plus-medical'
+                                style='color:rgba(0,0,0,0.29)'></i></button>
+                    </insert-todo-box>
+                </insert-todo-box-wrapper>
             </right-side>
 
 
-            <main>
+            <center-box>
+                <search-box>
+                    <search-box-wrapper>
+                        <i class='bx bxl-google'></i>
+                        <input type="text" placeholder="جستجو در گوگل" class="search-box-input">
+                        <button><i class='bx bx-search' style='color:#ffffff' id="search-button"></i></button>
+                    </search-box-wrapper>
+                </search-box>
+                <app-box-wrapper>
+                    <button>
+                        <i class='bx bxs-grid' style='color:#2e0295'></i>
+                        <p>دم دستی</p>
+                    </button>
+                    <button>
+                        <i class='bx bxs-circle-half bx-flip-vertical bx-spin' style='color:#28057c'></i>
+                        <p>حالت شب</p>
+                    </button>
+                    <button>
+                        <a href="https://kaaryar.ir/">
+                            <i class='bx bxl-javascript'></i>
+                            <p>کاریار</p>
+                        </a>
 
-            </main>
+                    </button>
+                    <button>
+                        <a href="www.google.com">
+                            <i class='bx bxl-google'></i>
+                            <p> گوگل</p>
+                        </a>
+                    </button>
+                    <button>
+                        <a href="https://www.microsoft.com/">
+                            <i class='bx bxl-microsoft' style='color:#28057c'></i>
+                            <p>مایکروسافت</p>
+                        </a>
+                    </button>
+                    <button>
+                        <a href="https://www.linkedin.com/">
+                            <i class='bx bxl-linkedin-square'></i>
+                            <p>لینکیدین</p>
+                        </a>
+                    </button>
+                    <button>
+                        <a href="https://github.com/">
+                            <i class='bx bxl-github' style='color:#0d0040'></i>
+                            <p>گیت هاب</p>
+                        </a>
+                    </button>
+                    <button>
+                        <a href="#">
+                            <i class='bx bx-plus' style='color:#bdbac6'></i>
+                        </a>
+                    </button>
+                    <button>
+                        <a href="#">
+                            <i class='bx bx-plus' style='color:#bdbac6'></i>
+                        </a>
+                    </button>
+                    <button>
+                        <a href="#">
+                            <i class='bx bx-plus' style='color:#bdbac6'></i>
+                        </a>
+                    </button>
+                    <button>
+                        <a href="#">
+                            <i class='bx bx-plus' style='color:#bdbac6'></i>
+                        </a>
+                    </button>
+                    <button>
+                        <a href="#">
+                            <i class='bx bx-plus' style='color:#bdbac6'></i>
+                        </a>
+                    </button>
+                    </app-box>
+            </center-box>
             <left-side>
 
             </left-side>
@@ -52,63 +126,8 @@
         </wrapper>
 
     </container>
-    <script>
-        const addBtn = document.querySelector(".plus-button");
-        const inputBox = document.querySelector(".todo-input-box");
-        const firstTask = document.querySelector(".first-task");
-        const todoList = document.querySelector(".todo-list-ul");
-
-
-        showTasks();
-        addBtn.addEventListener("click", () => {
-            const userEnterTodo = inputBox.value.trim();
-            const getLocalstorageData = JSON.parse(localStorage.getItem("todo")) || [];
-            getLocalstorageData.push(userEnterTodo);
-
-            if (!userEnterTodo) {
-                alert("لطفا مطبی را وارد کنید")
-            } else {
-                localStorage.setItem("todo", JSON.stringify(getLocalstorageData));
-            }
-
-            showTasks();
-            inputBox.value = "";
-        });
-
-
-        function deleteItem(index) {
-            const getLocalstorageData = JSON.parse(localStorage.getItem("todo")) || []
-            const updatedItem = getLocalstorageData.filter((_, i) => i !== index);
-            localStorage.setItem("todo", JSON.stringify(updatedItem));
-            showTasks();
-
-        }
-
-        function showTasks() {
-            let newTag = "";
-
-            let getLocalstorageData = localStorage.getItem("todo");
-            if (!getLocalstorageData) {
-                listArray = ["کار شماره اول من"];
-            } else {
-                listArray = JSON.parse(getLocalstorageData);
-            }
-
-
-            listArray.forEach((element, index) => {
-                newTag += `<li>
-                            <div class="flex">
-                                <button class="edit-button"><i class='bx bxs-square' style='color:#27ed2c'></i></button>
-                                <p>${element}</p>
-                            </div>
-                            <button class="delete-button"><i class='bx bxs-trash' style='color:#df1226' onclick="deleteItem(${index})"></i></button>
-                        </li>`;
-            });
-            todoList.innerHTML = newTag;
-
-
-        }
-    </script>
+    <script src="/assets/scripts/todo.js"></script>
+    <script></script>
 </body>
 
 </html>
