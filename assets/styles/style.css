@@ -1,294 +1,299 @@
 body {
-  font-family: vazirmatn;
-  direction: rtl;
-  background-color: #c4def7;
+	font-family: vazirmatn;
+	direction: rtl;
+	background-color: #c4def7;
 }
 
 *,
 *::after,
 *::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 :root {
-  --primary-color: #ffffff;
+	--primary-color: #ffffff;
 }
 
 a {
-  text-decoration: none;
-  color: initial;
+	text-decoration: none;
+	color: initial;
 }
 
 li,
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 .flex {
-  display: flex;
+	display: flex;
 }
 
 container {
-  width: 100%;
-  height: 100vh;
-  max-width: 1124px !important;
-  padding: 16px;
+	width: 100%;
+	height: 100vh;
+	max-width: 1124px !important;
+	padding: 5px;
 }
 
 icon-wrapper {
-  width: 90%;
-  justify-content: end;
-  margin: 16px auto;
+	width: 90%;
+	justify-content: end;
+	margin: 16px auto;
+	padding-left: 10px;
 }
 
-.setting-icon,
-.user-icon {
-  width: 25px;
-  height: 25px;
-  color: #feffff;
-  margin: 0 10px;
-  cursor: pointer;
+icon-wrapper i {
+	font-size: 1.5rem;
+	cursor: pointer;
+	margin: 0 15px;
 }
 
 wrapper {
-  width: 90%;
-  height: 80vh;
-  margin: auto;
-  justify-content: space-between;
+	width: 90%;
+	height: 80vh;
+	margin: auto;
+	justify-content: space-between;
 }
 
 right-side,
 left-side {
-  width: 24%;
-  height: 100%;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 24px;
+	width: 24%;
+	height: 100%;
+	background-color: var(--primary-color);
+	border: none;
+	border-radius: 24px;
 }
 
 right-side {
-  position: relative;
+	position: relative;
 }
 
-right-side > h2 {
-  padding: 16px;
-  font-size: 1.5rem;
-  font-weight: 950;
+right-side > h4 {
+	padding: 16px;
+	font-size: 1.2rem;
+	font-weight: 950;
 }
 
-todo-list {
-  height: 80%;
-}
-
-right-side > hr {
-  color: #eeeef03e;
+right-side hr {
+	color: #fdfdfdac;
 }
 
 todo-list > ul {
-  margin: 16px auto;
-  width: 90%;
+	margin: 16px auto;
+	width: 90%;
 }
+
 .todo-list-ul li {
-  border: 2px solid rgba(85, 83, 83, 0.281);
-  margin: 16px auto;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
+	border: 2px solid rgba(85, 83, 83, 0.281);
+	margin: 16px auto;
+	border-radius: 8px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
 }
 
 todo-list li > div {
-  padding: 15px 0;
+	padding: 15px 0;
 }
 
 .edit-button {
-  font-size: 1rem;
-  padding-right: 4px;
-  border: none;
-  background: none;
-  outline: none;
-  display: none;
+	font-size: 1rem;
+	padding-right: 4px;
+	border: none;
+	background: none;
+	outline: none;
+	display: none;
 }
 
 todo-list li > p {
-  font-size: 1rem;
-  padding: 4px;
+	font-size: 1rem;
+	padding: 4px;
 }
 
 .delete-button {
-  margin: auto 4px;
-  display: none;
-  cursor: pointer;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  outline: none;
+	margin: auto 4px;
+	display: none;
+	cursor: pointer;
+	font-size: 2rem;
+	background: none;
+	border: none;
+	outline: none;
 }
 
 todo-list li:hover .delete-button,
 todo-list li:hover .edit-button {
-  display: block;
+	display: block;
 }
 insert-todo-box-wrapper {
-  justify-content: center;
+	justify-content: center;
 }
 
 insert-todo-box {
-  padding: 10px;
-  border: 2px solid rgba(85, 83, 83, 0.281);
-  border-radius: 8px;
-  height: 6vh;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 16px;
+	padding: 10px;
+	border: 2px solid rgba(85, 83, 83, 0.281);
+	border-radius: 8px;
+	height: 6vh;
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 16px;
 }
 
 insert-todo-box > input {
-  width: 80%;
-  font-size: 1rem;
-  border: none;
-  outline: none;
-  font-family: vazirmatn;
-  padding: 4px;
+	width: 80%;
+	font-size: 1rem;
+	border: none;
+	outline: none;
+	font-family: vazirmatn;
+	padding: 4px;
 }
 
 .plus-button {
-  margin: auto;
-  background-color: var(--primary-color);
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
+	margin: auto;
+	background-color: var(--primary-color);
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
 }
 
 .todo-list-ul p {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 /* main */
 center-box {
-  width: 50%;
+	width: 50%;
 }
 
 search-box {
-  background-color: var(--primary-color);
-  width: 100%;
-  height: 15vh;
-  border-radius: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	background-color: var(--primary-color);
+	width: 100%;
+	height: 15vh;
+	border-radius: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 search-box-wrapper {
-  width: 90%;
-  background-color: #f3f4f6;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 9999px;
+	width: 90%;
+	background-color: #f3f4f6;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 9999px;
 }
 
 .search-box-input {
-  width: 80%;
-  font-size: 1.5rem;
-  padding-right: 10px;
-  font-family: vazirmatn;
-  border: none;
-  outline: none;
-  background-color: #f3f4f6;
-  padding: 10px 0;
+	width: 80%;
+	font-size: 1.5rem;
+	padding-right: 10px;
+	font-family: vazirmatn;
+	border: none;
+	outline: none;
+	background-color: #f3f4f6;
+	padding: 10px 0;
 }
 
 search-box-wrapper > i {
-  font-size: 1.5rem;
-  text-align: center;
+	font-size: 1.5rem;
+	text-align: center;
 }
 
 search-box-wrapper > button {
-  border: none;
-  outline: none;
+	border: none;
+	outline: none;
 }
 
 #search-button {
-  font-size: 1.5rem;
-  text-align: center;
-  border: none;
-  background-color: #3d518f;
-  padding: 5px 15px;
-  outline: none;
-  border-radius: 9999px;
+	font-size: 1.5rem;
+	text-align: center;
+	border: none;
+	background-color: #3d518f;
+	padding: 5px 15px;
+	outline: none;
+	border-radius: 9999px;
 }
 
 /* app box wrapper */
 app-box-wrapper {
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 10px;
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	gap: 10px;
 }
 
 app-box-wrapper > button {
-  font-family: vazirmatn;
-  height: 12vh;
-  background-color: var(--primary-color);
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  cursor: pointer;
+	font-family: vazirmatn;
+	height: 12vh;
+	background-color: var(--primary-color);
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	cursor: pointer;
 }
 
 app-box-wrapper > button:hover {
-  border: 1px solid lightseagreen;
+	border: 1px solid lightseagreen;
 }
 
 app-box-wrapper > button i {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 
 /* left side */
 left-side {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
 }
 
 time-box,
 weather-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 25px;
-  padding: 10px 5px;
-  flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 25px;
+	padding: 10px 5px;
+	flex-grow: 1;
 }
 
 .selected-time-items {
-  display: flex;
-  justify-content: space-between;
-  gap: 5px;
+	display: flex;
+	justify-content: space-between;
+	gap: 5px;
 }
 
 timer-box,
 religious-times-box,
 weather-forecast-box {
-  border: 1px solid rgb(94, 161, 228);
-  border-radius: 9999px;
-  padding: 5px 10px;
+	border: 1px solid rgb(94, 161, 228);
+	border-radius: 9999px;
+	padding: 5px;
+	font-size: 0.5rem;
 }
 
 .timer,
 .religious-times,
 .weather-forecast {
-  font-family: vazirmatn;
-  background-color: var(--primary-color);
-  border: none;
+	font-family: vazirmatn;
+	background-color: var(--primary-color);
+	border: none;
 }
 
 .temperature {
-  width: 60%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+	width: 60%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.weather-sentence {
+	font-size: 0.7rem;
+	padding: 5px 0;
+}
+.max-min {
+	font-size: 0.7rem;
+	padding-bottom: 5px;
 }

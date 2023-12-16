@@ -11,6 +11,9 @@
 
     <!-- icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/images/icons/favicon.png.png" />
+
+
     <title>دستیار</title>
 
 </head>
@@ -19,14 +22,15 @@
 <body>
     <container>
         <icon-wrapper class="flex">
-            <i><img src="/assets/images/icons/user.svg" class="user-icon"></i>
-            <i><img src="/assets/images/icons/setting.svg" class="setting-icon"></i>
+            <i class='bx bxs-user' style='color:#ffffff'></i>
+            <i class='bx bxs-cog' style='color:#ffffff'></i>
         </icon-wrapper>
+
         <wrapper class="flex">
             <right-side>
-                <h2>
+                <h4>
                     دستنویس
-                </h2>
+                </h4>
                 <hr>
                 <todo-list>
                     <ul class="todo-list-ul">
@@ -52,6 +56,7 @@
                         <button><i class='bx bx-search' style='color:#ffffff' id="search-button"></i></button>
                     </search-box-wrapper>
                 </search-box>
+
                 <app-box-wrapper>
                     <button>
                         <i class='bx bxs-grid' style='color:#2e0295'></i>
@@ -117,21 +122,21 @@
                             <i class='bx bx-plus' style='color:#bdbac6'></i>
                         </a>
                     </button>
-                    </app-box>
+                </app-box-wrapper>
             </center-box>
 
 
             <left-side>
                 <time-box>
-                    <h2 class="time-now"></h2>
+                    <h3 class="time-now"></h3>
                     <div class="day-mounth flex">
                         <p class="day-now"></p>
                         <p class="mounth-now"></p>
                     </div>
                     <div class="foreign-date flex">
-                        <h6 class="arabic-date"></h6>
+                        <h4 class="arabic-date"></h4>
                         <h4>|</h4>
-                        <h6 class="AD-date"></h6>
+                        <h4 class="AD-date"></h4>
                     </div>
                     <div class="selected-time-items">
                         <timer-box>
@@ -154,6 +159,7 @@
                         </religious-times-box>
                     </div>
                 </time-box>
+
                 <weather-box>
                     <div class="temperature">
 

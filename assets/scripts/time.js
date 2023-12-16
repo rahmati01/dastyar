@@ -58,7 +58,7 @@ const fetchDate = async () => {
 			break;
 	}
 
-	timeNow.innerHTML += ` <h2>${minutes} : ${hours}</h2>`;
+	timeNow.innerHTML += ` <h3>${minutes} : ${hours}</h3>`;
 	utcDate.innerHTML += ` <h6>${years} / ${thisMonth} / ${days}</h6>`;
 };
 
