@@ -65,11 +65,11 @@ const fetchDate = async () => {
 const fetchDateShamsiHijri = async () => {
 	const response = await fetch(urlShamsiHijri);
 	const data = await response.json();
-	console.log(data);
 
 	DayinMonth.innerHTML = ` <p>${data.shamsi.dayInMonth}</p>`;
 	shamsiMonth.innerHTML = ` <p class="mounth-now">${data.shamsi.month}</p`;
 	islamicHijri.innerHTML = ` <h6 class="arabic-date"> ${data.islamicHijri.year}/ ${data.islamicHijri.month} / ${data.islamicHijri.dayInMonth} </h6>`;
 };
-fetchDate();
-fetchDateShamsiHijri();
+
+setInterval(fetchDate(), 30000);
+setInterval(fetchDateShamsiHijri(), 30000);
