@@ -11,7 +11,7 @@
 
     <!-- icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Assystand</title>
 
 </head>
 
@@ -58,7 +58,7 @@
                         <p>دم دستی</p>
                     </button>
                     <button>
-                        <i class='bx bxs-circle-half bx-flip-vertical bx-spin' style='color:#28057c'></i>
+                        <i class='bx bxs-moon'></i>
                         <p>حالت شب</p>
                     </button>
                     <button>
@@ -119,15 +119,155 @@
                     </button>
                     </app-box>
             </center-box>
+
+
             <left-side>
+                <time-box>
+                    <h2 class="time-now"></h2>
+                    <div class="day-mounth flex">
+                        <p class="day-now"></p>
+                        <p class="mounth-now"></p>
+                    </div>
+                    <div class="foreign-date flex">
+                        <h6 class="arabic-date"></h6>
+                        <h4>|</h4>
+                        <h6 class="AD-date"></h6>
+                    </div>
+                    <div class="selected-time-items">
+                        <timer-box>
+                            <select class="timer">
+                                <option selected>تایمر</option>
+                                <option value="timer 1">تایمر 1</option>
+                                <option value="timer 2">تایمر 2</option>
+                                <option value="timer 3">تایمر 3</option>
+                            </select>
+                        </timer-box>
+                        <religious-times-box>
+                            <select class="religious-times">
+                                <option selected>اوقات شرعی</option>
+                                <option value="tehran">تهران</option>
+                                <option value="tabriz">تبریز</option>
+                                <option value="esfahan">اصفهان</option>
+                                <option value="shiraz">شیراز</option>
+                                <option value="mashhad">مشهد</option>
+                            </select>
+                        </religious-times-box>
+                    </div>
+                </time-box>
+                <weather-box>
+                    <div class="temperature">
+                        <p>12</p>
+                        <i class='bx bx-cloud-snow'></i>
+                    </div>
+                    <p class="weather-sentence">بس ناحوانمردانه سرد<i class='bx bx-cloud-snow'
+                            style='color:#2b84f0'></i></p>
+                    <p class="max-min">13 حداکثر . 12 حداقل</p>
+                    <weather-forecast-box>
+                        <select class="weather-forecast">
+                            <option selected>پیش بینی</option>
+                            <option value="sunny">آفتابی</option>
+                            <option value="cloudy">ابری</option>
+                            <option value="rainy">بارانی</option>
+                            <option value="snow">برفی</option>
+                        </select>
+                    </weather-forecast-box>
+                </weather-box>
 
             </left-side>
 
         </wrapper>
 
     </container>
+    <script>
+        const url = "https://api.dastyar.io/express/clock/current";
+        const urlShamsiHijri = "https://kaaryar0506reactblog.liara.run/current/time";
+        let timeNow = document.querySelector(".time-now");
+        let utcDate = document.querySelector(".AD-date");
+        let DayinMonth = document.querySelector(".day-now");
+        let shamsiMonth = document.querySelector(".mounth-now");
+        let islamicHijri = document.querySelector(".arabic-date");
+
+
+
+        const fetchDate = async () => {
+            const response = await fetch(url);
+            const data = await response.json();
+            let millisecond = data.current;
+            const date = new Date(millisecond);
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const years = date.getFullYear();
+            const months = date.getMonth();
+            const days = date.getDay();
+
+
+
+
+
+            //utc month to string
+            let thisMonth;
+            switch (months) {
+                case 0:
+                    thisMonth = "Jun";
+                    break;
+                case 1:
+                    thisMonth = "Feb";
+                    break;
+                case 2:
+                    thisMonth = "Mar";
+                    break;
+                case 3:
+                    thisMonth = "Apr";
+                    break;
+                case 4:
+                    thisMonth = "May";
+                    break;
+                case 5:
+                    thisMonth = "Jun";
+                    break;
+                case 6:
+                    thisMonth = "Jul";
+                    break;
+                case 7:
+                    thisMonth = "Aug";
+                    break;
+                case 8:
+                    thisMonth = "Sep";
+                    break;
+                case 9:
+                    thisMonth = "Oct";
+                    break;
+                case 10:
+                    thisMonth = "Nov";
+                    break;
+                case 11:
+                    thisMonth = "Dec";
+                    break;
+            }
+
+            timeNow.innerHTML += ` <h2>${minutes} : ${hours}</h2>`;
+            utcDate.innerHTML += ` <h6>${years} / ${thisMonth} / ${days}</h6>`;
+
+        }
+
+        const fetchDateShamsiHijri = async () => {
+            const response = await fetch(urlShamsiHijri);
+            const data = await response.json();
+            console.log(data);
+
+
+            DayinMonth.innerHTML = ` <p>${data.shamsi.dayInMonth}</p>`;
+            shamsiMonth.innerHTML = ` <p class="mounth-now">${data.shamsi.month}</p`;
+            islamicHijri.innerHTML = ` <h6 class="arabic-date"> ${data.islamicHijri.year}/ ${data.islamicHijri.month} / ${data.islamicHijri.dayInMonth} </h6>`;
+
+        }
+        fetchDate();
+        fetchDateShamsiHijri();
+
+
+    </script>
     <script src="/assets/scripts/todo.js"></script>
-    <script></script>
+    <!-- <script src="/assets/scripts/time.js"></script> -->
 </body>
 
 </html>
